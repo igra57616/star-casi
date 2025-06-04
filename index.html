@@ -1,21 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>StarCasino | Казино на звёзды</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarCasino - Рулетка</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div class="app">
-        <h1>🎰 StarCasino</h1>
-        <div class="balance">Баланс: <span id="balance">1000</span> ⭐️</div>
-        <div class="games">
-            <button onclick="playSlots()">🎰 Играть в слоты (50⭐️)</button>
-            <button onclick="playDice()">🎲 Кости (30⭐️)</button>
+        <div class="header">
+            <h1>⭐ StarCasino</h1>
+            <div class="balance">Баланс: <span id="balance">5000</span>✨</div>
         </div>
+
+        <div class="bet-controls">
+            <div class="bet-amount-control">
+                <button class="bet-change" id="decrease-bet">-</button>
+                <div class="bet-display">
+                    <div class="bet-title">Сумма ставки</div>
+                    <div class="bet-amount" id="current-bet">100</div>
+                </div>
+                <button class="bet-change" id="increase-bet">+</button>
+            </div>
+
+            <div class="bet-steps">
+                <button class="step-btn" data-step="10">+10</button>
+                <button class="step-btn" data-step="50">+50</button>
+                <button class="step-btn" data-step="100">+100</button>
+                <button class="step-btn" data-step="500">+500</button>
+                <button class="step-btn" id="max-bet">MAX</button>
+            </div>
+        </div>
+
+        <div class="multipliers">
+            <button class="multiplier-btn" data-multiplier="2">x2</button>
+            <button class="multiplier-btn" data-multiplier="3">x3</button>
+            <button class="multiplier-btn" data-multiplier="5">x5</button>
+            <button class="multiplier-btn" data-multiplier="50">x50</button>
+        </div>
+
+        <div class="roulette-container">
+            <div class="roulette-wheel" id="wheel">
+                <div class="wheel-center"></div>
+                <div class="wheel-numbers"></div>
+            </div>
+            <div class="wheel-pointer"></div>
+        </div>
+
+        <div class="controls">
+            <button class="spin-btn" id="spin-btn">Крутить рулетку</button>
+        </div>
+
+        <div class="result" id="result"></div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
